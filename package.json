@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "workspaces": [
+        "client",
+        "server"
+    ],
+    "scripts": {
+        "bootstrap": "yarn install",
+        "clean": "rm -rf ./node_modules && rm -rf ./client/node_modules && rm -rf ./server/node_modules && rm -rf ./server/dist && rm -rf ./client/.next",
+        "client:dev": "yarn workspace client dev",
+        "server:dev": "yarn workspace server dev",
+        "client:workspace": "yarn workspace client",
+        "server:workspace": "yarn workspace server",
+        "docker:build": "docker-compose up --build"
+    },
+    "dependencies": {
+        "concurrently": "^7.6.0"
+    }
+}
